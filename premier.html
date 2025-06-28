@@ -3,59 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="tanish.css">
+    <title>Premiere Pro Work | Tanish Mann's Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .video-card {
+            transition: all 0.3s ease;
+        }
+        .video-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+        .horizontal-video video {
+            aspect-ratio: 16/9;
+        }
+        .vertical-video video {
+            aspect-ratio: 9/16;
+        }
+    </style>
 </head>
-<body>
-    <nav>
-        <div class="navleft">
-            <h1>Tanish's Portfolio</h1>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">TM</span>
+                <span class="ml-2 text-xl font-semibold text-gray-800 hidden md:block">Tanish Mann</span>
+            </div>
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-blue-500 transition">Home</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-blue-500 transition">Portfolio</a>
+                <a href="about.html" class="text-gray-700 hover:text-blue-500 transition">About</a>
+                <a href="resume.html" class="text-gray-700 hover:text-blue-500 transition">Resume</a>
+                <div class="flex space-x-4 ml-4">
+                    <a href="https://www.facebook.com/" class="text-gray-600 hover:text-blue-600 text-xl"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/tanishmann1" class="text-gray-600 hover:text-pink-600 text-xl"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-700 hover:text-blue-500 focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
         </div>
-        <div class="navright">
-            <input type="checkbox" id="check" />
-            <label for="check" class='checkbtn'>
-                <i class="fa-solid fa-bars"></i>
-            </label>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href=""><i class="fa-brands fa-facebook"></i></a> <a href="https://www.instagram.com/tanishmann1"><i class="fa-brands fa-instagram"></i></a></li>
-            </ul>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu md:hidden bg-white hidden" id="mobileMenu">
+            <div class="px-4 py-2 space-y-3">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-blue-500">Home</a>
+                <a href="portfolio.html" class="block py-2 text-gray-700 hover:text-blue-500">Portfolio</a>
+                <a href="about.html" class="block py-2 text-gray-700 hover:text-blue-500">About</a>
+                <a href="resume.html" class="block py-2 text-gray-700 hover:text-blue-500">Resume</a>
+                <div class="flex space-x-4 py-2">
+                    <a href="https://www.facebook.com/" class="text-gray-600 hover:text-blue-600 text-xl"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/tanishmann1" class="text-gray-600 hover:text-pink-600 text-xl"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
         </div>
     </nav>
-    <h1 class="collage-head">Premier Pro Work!</h1>
-    <div class="collageparent">
-        <div class="collage-container"> 
-            <div class="collage-item"><video controls src="1 mint shot.mp4"  ></video></div> 
-            <div class="collage-item"><video controls src="A007_A039_1108RZ_001.mp4"  ></video></div> 
-            <div class="collage-item"><video controls src="94f35d9b2dd6ff7d300eb302ec06062e.mp4"  ></video></div> 
-            <div class="collage-item"><video controls src="903b6bf1f355145aa13a0d32b1817429.mp4"  ></video></div> 
-            <div class="collage-item"><video controls src="aaja we 2.mp4"  ></video></div> 
-            <div class="collage-item"><video controls src="Fujifilm GFX 100 outdoor evening 4k 25p F-Log 32-64mm pre-production_1.mp4"  ></video></div> 
-            <div class="collage-item"><video controls src="Nested Sequence 01.mp4"  ></video></div> 
-            <div class="collage-item"><video controls src="Spider-Man Gets His Black Suit Scene - Spider-Man 3 (2007) Movie CLIP HD.mp4"  ></video></div> 
-            <div class="collage-item"><video controls src="Transparent Video.mp4"  ></video></div> 
-            
+
+    <!-- Page Header -->
+    <div class="max-w-7xl mx-auto px-4 py-12 text-center">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">Adobe <span class="text-blue-600">Premiere Pro</span> Projects</h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Showcasing my video editing and post-production work</p>
+    </div>
+
+    <!-- Video Grid -->
+    <div class="max-w-7xl mx-auto px-4 pb-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Horizontal Video Card Example -->
+            <div class="video-card horizontal-video bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                <div class="relative">
+                    <video controls class="w-full h-auto bg-black">
+                        <source src="./premiervideo/1 mint shot.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">1 Minute Shot</h3>
+                    <p class="text-gray-600 text-sm">Quick-paced video edit with dynamic transitions</p>
+                </div>
+            </div>
+            <!-- More Horizontal Video Cards -->
+            <div class="video-card horizontal-video bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                <div class="relative">
+                    <video controls class="w-full h-auto bg-black">
+                        <source src="./premiervideo/A007_A039_1108RZ_001.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Color Grading</h3>
+                    <p class="text-gray-600 text-sm">Professional color grading and editing</p>
+                </div>
+            </div>
+            <div class="video-card horizontal-video bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                <div class="relative">
+                    <video controls class="w-full h-auto bg-black">
+                        <source src="./premiervideo/Fujifilm GFX 100 outdoor evening 4k 25p F-Log 32-64mm pre-production_1.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Color Grading</h3>
+                    <p class="text-gray-600 text-sm">Color correction and grading showcase</p>
+                </div>
+            </div>
+            <div class="video-card horizontal-video bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                <div class="relative">
+                    <video controls class="w-full h-auto bg-black">
+                        <source src="./premiervideo/903b6bf1f355145aa13a0d32b1817429.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Motion Graphic Ads</h3>
+                    <p class="text-gray-600 text-sm">Rhythmic cutting and sound design</p>
+                </div>
+            </div>
+            <div class="video-card horizontal-video bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                <div class="relative">
+                    <video controls class="w-full h-auto bg-black">
+                        <source src="./premiervideo/Transparent Video.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Motion Graphic Ads</h3>
+                    <p class="text-gray-600 text-sm">Alpha channel compositing work</p>
+                </div>
+            </div>
+            <div class="video-card horizontal-video bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                <div class="relative">
+                    <video controls class="w-full h-auto bg-black">
+                        <source src="./premiervideo/94f35d9b2dd6ff7d300eb302ec06062e.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Motion Graphic Ads</h3>
+                    <p class="text-gray-600 text-sm">Experimental video effects and timing</p>
+                </div>
+            </div>
+            <div class="video-card horizontal-video bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                <div class="relative">
+                    <video controls class="w-full h-auto bg-black">
+                        <source src="./premiervideo/aaja we 2.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Music Video Edit</h3>
+                    <p class="text-gray-600 text-sm">Synced to music with visual effects</p>
+                </div>
+            </div>
+            <div class="video-card horizontal-video bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                <div class="relative">
+                    <video controls class="w-full h-auto bg-black">
+                        <source src="./premiervideo/Nested Sequence 01.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Lyrical Video Edit</h3>
+                    <p class="text-gray-600 text-sm">Complex editing with nested timelines</p>
+                </div>
+            </div>
+            <div class="video-card horizontal-video bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                <div class="relative">
+                    <video controls class="w-full h-auto bg-black">
+                        <source src="./premiervideo/Spider-Man Gets His Black Suit Scene - Spider-Man 3 (2007) Movie CLIP HD.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Match Cut</h3>
+                    <p class="text-gray-600 text-sm">Film scene editing and effects</p>
+                </div>
+            </div>
         </div>
     </div>
-    <a href="indesign.html"><div class="previous"><i class="fa-solid fa-backward"></i> Previous</div></a>
-    <a href="after.html"><div class="next">Next <i class="fa-solid fa-forward"></i></div></a>
-    <footer class="footer">
-        <p>Copyright © 2024 Tanish's Portfolio website</p>
-        <p>
-          Contact us:
-          <a href="https://mann24161@gmail.com">mann24161@gmail.com</a> |
-          <a href="tel:+919311634255">+91 9311634255</a>
-        </p>
-        <p>
-          Follow us:
-          <a href="https://t.ly/ec8NF">WhatsApp</a> |
-          <a href="https://facebook.com/">Facebook</a> |
-          <a href="https://www.instagram.com/tanishmann1">Instagram</a>
-        </p>
-      </footer>
+
+    <!-- Navigation Footer -->
+    <div class="max-w-7xl mx-auto px-4 pb-12 flex justify-between">
+        <a href="indesign.html" class="flex items-center text-blue-600 hover:text-blue-800 pagination-link">
+            <i class="fas fa-arrow-left mr-2"></i> Previous: InDesign Work
+        </a>
+        <a href="after.html" class="flex items-center text-blue-600 hover:text-blue-800 pagination-link">
+            Next: After Effects Work <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Tanish Mann</h3>
+                    <p class="text-gray-400">Professional designer specializing in video editing, VFX, and digital media solutions.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="portfolio.html" class="text-gray-400 hover:text-white transition">Portfolio</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">About</a></li>
+                        <li><a href="resume.html" class="text-gray-400 hover:text-white transition">Resume</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-gray-400 mr-2"></i>
+                            <a href="mailto:mann24161@gmail.com" class="text-gray-400 hover:text-white transition">mann24161@gmail.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-gray-400 mr-2"></i>
+                            <a href="tel:+919311634255" class="text-gray-400 hover:text-white transition">+91 9311634255</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Me</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/" class="text-gray-400 hover:text-blue-400 text-xl"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/tanishmann1" class="text-gray-400 hover:text-pink-400 text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="https://t.ly/ec8NF" class="text-gray-400 hover:text-green-400 text-xl"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>Copyright © 2024 Tanish Mann. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>

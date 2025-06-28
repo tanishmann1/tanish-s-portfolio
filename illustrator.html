@@ -3,63 +3,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="tanish.css">
+    <title>Illustrator Work | Tanish Mann's Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .project-card {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+        .project-image {
+            transition: transform 0.5s ease;
+        }
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+        .nav-link.active {
+            color: #3b82f6;
+            border-bottom: 2px solid #3b82f6;
+        }
+        .pagination-link {
+            transition: all 0.3s ease;
+        }
+        .pagination-link:hover {
+            color: #2563eb;
+            transform: translateX(5px);
+        }
+    </style>
 </head>
-<body>
-    <nav>
-        <div class="navleft">
-            <h1>Tanish's Portfolio</h1>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <span class="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-indigo-400 bg-clip-text text-transparent">TM</span>
+                <span class="ml-2 text-xl font-semibold text-gray-800 hidden md:block">Tanish Mann</span>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="../index.html" class="text-gray-700 hover:text-indigo-500 transition">Home</a>
+                <a href="../portfolio.html" class="text-gray-700 hover:text-indigo-500 transition">Portfolio</a>
+                <a href="../about.html" class="text-gray-700 hover:text-indigo-500 transition">About</a>
+                <a href="../resume.html" class="text-gray-700 hover:text-indigo-500 transition">Resume</a>
+                <div class="flex space-x-4 ml-4">
+                    <a href="https://www.facebook.com/" class="text-gray-600 hover:text-indigo-600 text-xl"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/tanishmann1" class="text-gray-600 hover:text-pink-600 text-xl"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <input type="checkbox" id="check" class="hidden" />
+                <label for="check" class='checkbtn cursor-pointer text-gray-700 hover:text-indigo-500'>
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </label>
+            </div>
         </div>
-        <div class="navright">
-            <input type="checkbox" id="check" />
-            <label for="check" class='checkbtn'>
-                <i class="fa-solid fa-bars"></i>
-            </label>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href=""><i class="fa-brands fa-facebook"></i></a> <a href="https://www.instagram.com/tanishmann1"><i class="fa-brands fa-instagram"></i></a></li>
-            </ul>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu md:hidden bg-white" id="mobileMenu">
+            <div class="px-4 py-2 space-y-3">
+                <a href="../index.html" class="block py-2 text-gray-700 hover:text-indigo-500">Home</a>
+                <a href="../portfolio.html" class="block py-2 text-gray-700 hover:text-indigo-500">Portfolio</a>
+                <a href="../about.html" class="block py-2 text-gray-700 hover:text-indigo-500">About</a>
+                <a href="../resume.html" class="block py-2 text-gray-700 hover:text-indigo-500">Resume</a>
+                <div class="flex space-x-4 py-2">
+                    <a href="https://www.facebook.com/" class="text-gray-600 hover:text-indigo-600 text-xl"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/tanishmann1" class="text-gray-600 hover:text-pink-600 text-xl"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
         </div>
     </nav>
-    <h1 class="collage-head">Illustrator Work!</h1>
-    <div class="collageparent">
-        <div class="collage-container"> 
-            <div class="collage-item"><img src="book cover mock up 3.jpg" alt="Image 1"></div> 
-            <div class="collage-item"><img src="cadbury ad.jpg" alt="Image 2"></div> 
-            <div class="collage-item"><img src="digital illustration 2.jpg" alt="Image 3"></div> 
-            <div class="collage-item"><img src="digital illustration_tanish sidhu 5911.jpg" alt="Image 4"></div> 
-            <div class="collage-item"><img src="digital illustration_tanish.jpg" alt="Image 5"></div> 
-            <div class="collage-item"><img src="ISOMETRIC EFFECT HIGH.jpg" alt="Image 6"></div> 
-            <div class="collage-item"><img src="isometric exterior.jpg" alt="Image 7"></div> 
-            <div class="collage-item"><img src="LOGO 1.jpg" alt="Image 8"></div> 
-            <div class="collage-item"><img src="LOGO 2.jpg" alt="Image 9"></div> 
-            <div class="collage-item"><img src="model illustration.jpg" alt="Image 10"></div> 
-            <div class="collage-item"><img src="MOVIE POSTER 2.jpg" alt="Image 11"></div> 
-            <div class="collage-item"><img src="packaging.jpg" alt="Image 12"></div> 
-            <div class="collage-item"><img src="product advertisementt pipette.jpg" alt="Image 13"></div> 
-            <div class="collage-item"><img src="VECTOR ART.jpg" alt="Image 14"></div> 
+
+    <!-- Page Header -->
+    <div class="max-w-7xl mx-auto px-4 py-12 text-center">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">Adobe <span class="text-indigo-600">Illustrator</span> Portfolio</h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Showcasing my vector art, logos, and digital illustrations</p>
+    </div>
+
+    <!-- Portfolio Grid -->
+    <div class="max-w-7xl mx-auto px-4 pb-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Project 1 -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="overflow-hidden h-60">
+                    <img src="./illustratorimages/book cover mock up 3.jpg" alt="Book Cover Mockup" class="w-full h-full object-contain project-image">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Book Cover Design</h3>
+                    <p class="text-gray-600 text-sm">Creative book cover with 3D mockup effect</p>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="overflow-hidden h-60">
+                    <img src="./illustratorimages/cadbury ad.jpg" alt="Cadbury Advertisement" class="w-full h-full object-contain project-image">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Cadbury Advertisement</h3>
+                    <p class="text-gray-600 text-sm">Product promotional design</p>
+                </div>
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="overflow-hidden h-60">
+                    <img src="./illustratorimages/digital illustration 2.jpg" alt="Digital Illustration" class="w-full h-full object-contain project-image">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Digital Illustration</h3>
+                    <p class="text-gray-600 text-sm">Vector artwork with vibrant colors</p>
+                </div>
+            </div>
+            
+            <!-- Project 4 -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="overflow-hidden h-60">
+                    <img src="./illustratorimages/digital illustration_tanish sidhu 5911.jpg" alt="Character Illustration" class="w-full h-full object-contain project-image">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Character Illustration</h3>
+                    <p class="text-gray-600 text-sm">Stylized vector portrait</p>
+                </div>
+            </div>
+            
+            <!-- Project 5 -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="overflow-hidden h-60">
+                    <img src="./illustratorimages/digital illustration_tanish.jpg" alt="Digital Art" class="w-full h-full object-contain project-image">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Digital Art</h3>
+                    <p class="text-gray-600 text-sm">Expressive vector illustration</p>
+                </div>
+            </div>
+            
+            <!-- Project 6 -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="overflow-hidden h-60">
+                    <img src="./illustratorimages/ISOMETRIC EFFECT HIGH.jpg" alt="Isometric Design" class="w-full h-full object-contain project-image">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Isometric Design</h3>
+                    <p class="text-gray-600 text-sm">3D-style vector illustration</p>
+                </div>
+            </div>
+            
+            <!-- Project 7 -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="overflow-hidden h-60">
+                    <img src="./illustratorimages/isometric exterior.jpg" alt="Isometric Building" class="w-full h-full object-contain project-image">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Isometric Building</h3>
+                    <p class="text-gray-600 text-sm">Architectural vector illustration</p>
+                </div>
+            </div>
+            
+            <!-- Project 8 -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="overflow-hidden h-60">
+                    <img src="./illustratorimages/LOGO 1.jpg" alt="Logo Design" class="w-full h-full object-contain project-image">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Logo Design</h3>
+                    <p class="text-gray-600 text-sm">Minimalist brand identity</p>
+                </div>
+            </div>
+            
+            <!-- Project 9 -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="overflow-hidden h-60">
+                    <img src="./illustratorimages/LOGO 2.jpg" alt="Brand Logo" class="w-full h-full object-contain project-image">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Brand Logo</h3>
+                    <p class="text-gray-600 text-sm">Creative logo mark</p>
+                </div>
+            </div>
+            
+            <!-- Project 10 -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="overflow-hidden h-60">
+                    <img src="./illustratorimages/model illustration.jpg" alt="Fashion Illustration" class="w-full h-full object-contain project-image">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Fashion Illustration</h3>
+                    <p class="text-gray-600 text-sm">Stylized vector portrait</p>
+                </div>
+            </div>
+            
+            <!-- Project 11 -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="overflow-hidden h-60">
+                    <img src="./illustratorimages/MOVIE POSTER 2.jpg" alt="Movie Poster" class="w-full h-full object-contain project-image">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Movie Poster</h3>
+                    <p class="text-gray-600 text-sm">Cinematic vector artwork</p>
+                </div>
+            </div>
+            
+            <!-- Project 12 -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="overflow-hidden h-60">
+                    <img src="./illustratorimages/packaging.jpg" alt="Product Packaging" class="w-full h-full object-contain project-image">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Product Packaging</h3>
+                    <p class="text-gray-600 text-sm">3D packaging design mockup</p>
+                </div>
+            </div>
+            
+            <!-- Project 13 -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="overflow-hidden h-60">
+                    <img src="./illustratorimages/product advertisementt pipette.jpg" alt="Product Advertisement" class="w-full h-full object-contain project-image">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Product Advertisement</h3>
+                    <p class="text-gray-600 text-sm">Brand promotional material</p>
+                </div>
+            </div>
+            
+            <!-- Project 14 -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="overflow-hidden h-60">
+                    <img src="./illustratorimages/VECTOR ART.jpg" alt="Vector Art" class="w-full h-full object-contain project-image">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Vector Art</h3>
+                    <p class="text-gray-600 text-sm">Detailed vector illustration</p>
+                </div>
+            </div>
         </div>
     </div>
-    <a href="photoshop.html"><div class="previous"><i class="fa-solid fa-backward"></i> Previous</div></a>
-    <a href="corel.html"><div class="next">Next <i class="fa-solid fa-forward"></i></div></a>
-    <footer class="footer">
-        <p>Copyright © 2024 Tanish's Portfolio website</p>
-        <p>
-          Contact us:
-          <a href="https://mann24161@gmail.com">mann24161@gmail.com</a> |
-          <a href="tel:+919311634255">+91 9311634255</a>
-        </p>
-        <p>
-          Follow us:
-          <a href="https://t.ly/ec8NF">WhatsApp</a> |
-          <a href="https://facebook.com/">Facebook</a> |
-          <a href="https://www.instagram.com/tanishmann1">Instagram</a>
-        </p>
-      </footer>
+
+    <!-- Navigation Footer -->
+    <div class="max-w-7xl mx-auto px-4 pb-12 flex justify-between">
+        <a href="photoshop.html" class="flex items-center text-indigo-600 hover:text-indigo-800 pagination-link">
+            <i class="fas fa-arrow-left mr-2"></i> Previous: Photoshop Work
+        </a>
+        <a href="corel.html" class="flex items-center text-indigo-600 hover:text-indigo-800 pagination-link">
+            Next: CorelDRAW Work <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Tanish Mann</h3>
+                    <p class="text-gray-400">Professional designer specializing in graphic design, VFX, and digital media solutions.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="../portfolio.html" class="text-gray-400 hover:text-white transition">Portfolio</a></li>
+                        <li><a href="../about.html" class="text-gray-400 hover:text-white transition">About</a></li>
+                        <li><a href="../resume.html" class="text-gray-400 hover:text-white transition">Resume</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-gray-400 mr-2"></i>
+                            <a href="mailto:mann24161@gmail.com" class="text-gray-400 hover:text-white transition">mann24161@gmail.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-gray-400 mr-2"></i>
+                            <a href="tel:+919311634255" class="text-gray-400 hover:text-white transition">+91 9311634255</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Me</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/" class="text-gray-400 hover:text-indigo-400 text-xl"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/tanishmann1" class="text-gray-400 hover:text-pink-400 text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="https://t.ly/ec8NF" class="text-gray-400 hover:text-green-400 text-xl"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>Copyright © 2024 Tanish Mann. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('check').addEventListener('change', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (this.checked) {
+                mobileMenu.classList.add('open');
+            } else {
+                mobileMenu.classList.remove('open');
+            }
+        });
+    </script>
 </body>
 </html>

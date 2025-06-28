@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CorelDRAW Work | Tanish Mann's Portfolio</title>
+    <title>3D Renders & Modelling | Tanish Mann's Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
@@ -19,7 +19,7 @@
             transition: transform 0.5s ease;
         }
         .project-card:hover .project-image {
-            transform: scale(1.03);
+            transform: scale(1.05);
         }
         .mobile-menu {
             max-height: 0;
@@ -29,12 +29,9 @@
         .mobile-menu.open {
             max-height: 500px;
         }
-        .pagination-link {
-            transition: all 0.3s ease;
-        }
-        .pagination-link:hover {
-            color: #2563eb;
-            transform: translateX(5px);
+        .nav-link.active {
+            color: #3b82f6;
+            border-bottom: 2px solid #3b82f6;
         }
     </style>
 </head>
@@ -46,7 +43,6 @@
                 <span class="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-indigo-400 bg-clip-text text-transparent">TM</span>
                 <span class="ml-2 text-xl font-semibold text-gray-800 hidden md:block">Tanish Mann</span>
             </div>
-            
             <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center space-x-6">
                 <a href="index.html" class="text-gray-700 hover:text-indigo-500 transition">Home</a>
@@ -58,7 +54,6 @@
                     <a href="https://www.instagram.com/tanishmann1" class="text-gray-600 hover:text-pink-600 text-xl"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-            
             <!-- Mobile Menu Button -->
             <div class="md:hidden">
                 <input type="checkbox" id="check" class="hidden" />
@@ -67,7 +62,6 @@
                 </label>
             </div>
         </div>
-        
         <!-- Mobile Menu -->
         <div class="mobile-menu md:hidden bg-white" id="mobileMenu">
             <div class="px-4 py-2 space-y-3">
@@ -85,8 +79,8 @@
 
     <!-- Page Header -->
     <div class="max-w-7xl mx-auto px-4 py-12 text-center">
-        <h1 class="text-4xl font-bold text-gray-800 mb-4"><span class="text-indigo-600">CorelDRAW</span> Projects</h1>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Showcasing my vector designs and layout work created with CorelDRAW</p>
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">My <span class="text-indigo-600">3D Renders & Modelling</span></h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">A showcase of my 3D modeling, rendering, and visualization skills using 3ds Max and Photoshop</p>
     </div>
 
     <!-- Portfolio Grid -->
@@ -95,66 +89,101 @@
             <!-- Project 1 -->
             <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
                 <div class="overflow-hidden h-60">
-                    <img src="./corelimages/calendar.jpg" alt="Calendar Design" class="w-full h-full object-contain project-image">
+                    <img src="./3Ds max/interior designing 0001.png" alt="Modern Living Room Render" class="w-full h-full object-contain project-image">
                 </div>
                 <div class="p-4">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Calendar Design</h3>
-                    <p class="text-gray-600 text-sm">Creative calendar layout with custom illustrations</p>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Modern Living Room</h3>
+                    <p class="text-gray-600 text-sm">Photorealistic interior visualization with natural lighting and textures.</p>
                 </div>
             </div>
-            
             <!-- Project 2 -->
             <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
                 <div class="overflow-hidden h-60">
-                    <img src="./corelimages/TOY CAE 5423.jpg" alt="Toy Car Advertisement" class="w-full h-full object-contain project-image">
+                    <img src="./3Ds max/Screenshot 2025-02-04 090924.png" alt="Book Cover 3D Mockup" class="w-full h-full object-contain project-image">
                 </div>
                 <div class="p-4">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Toy Car Packaging</h3>
-                    <p class="text-gray-600 text-sm">Product promotional design</p>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Stairs 3d Render</h3>
+                    <p class="text-gray-600 text-sm">3D visualization of a book cover design for publishing presentations.</p>
                 </div>
             </div>
-            
             <!-- Project 3 -->
             <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
                 <div class="overflow-hidden h-60">
-                    <img src="./corelimages/TANISH BRO.jpg" alt="Brochure Design" class="w-full h-full object-contain project-image">
+                    <img src="./3Ds max/Screenshot 2025-02-04 091347.png" alt="Colorful Abstract Loop" class="w-full h-full object-contain project-image">
                 </div>
                 <div class="p-4">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Brochure Design</h3>
-                    <p class="text-gray-600 text-sm">Tri-fold marketing brochure</p>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Chair 3d Sideway</h3>
+                    <p class="text-gray-600 text-sm">Animated 3D shapes and vibrant color transitions for motion graphics.</p>
                 </div>
             </div>
-            
             <!-- Project 4 -->
             <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
                 <div class="overflow-hidden h-60">
-                    <img src="./corelimages/MENU CAFETERIA.jpg" alt="Cafeteria Menu" class="w-full h-full object-contain project-image">
+                    <img src="./3Ds max/Screenshot 2025-02-04 091403.png" alt="Product Advertisement Render" class="w-full h-full object-contain project-image">
                 </div>
                 <div class="p-4">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Cafeteria Menu</h3>
-                    <p class="text-gray-600 text-sm">Professional food menu design</p>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Chair 3d front</h3>
+                    <p class="text-gray-600 text-sm">3D product visualization for advertising and promotional campaigns.</p>
                 </div>
             </div>
-            
             <!-- Project 5 -->
             <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
                 <div class="overflow-hidden h-60">
-                    <img src="./corelimages/TANISH MENU.jpg" alt="Restaurant Menu" class="w-full h-full object-contain project-image">
+                    <img src="./3Ds max/Screenshot 2025-02-12 214938.png" alt="Magazine Cover Render" class="w-full h-full object-contain project-image">
                 </div>
                 <div class="p-4">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Restaurant Menu</h3>
-                    <p class="text-gray-600 text-sm">Elegant menu design with food photography</p>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Table Lamp 3d Render</h3>
+                    <p class="text-gray-600 text-sm">3D mockup of a magazine cover for editorial design showcase.</p>
                 </div>
             </div>
-
             <!-- Project 6 -->
             <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
                 <div class="overflow-hidden h-60">
-                    <img src="./corelimages/tanish 233333.jpg" alt="Restaurant Menu" class="w-full h-full object-contain project-image">
+                    <img src="./3Ds max/Screenshot 2025-02-04 091418.png" alt="Movie Poster 3D Scene" class="w-full h-full object-contain project-image">
                 </div>
                 <div class="p-4">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Mustang  Poster</h3>
-                    <p class="text-gray-600 text-sm">Mustang's marketing poster</p>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Chair 3D Scene</h3>
+                    <p class="text-gray-600 text-sm">Cinematic poster with 3D elements and dramatic lighting.</p>
+                </div>
+            </div>
+            <!-- Project 7 -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="overflow-hidden h-60">
+                    <img src="./3Ds max/Screenshot 2025-02-28 235907.png" alt="Product Packaging 3D" class="w-full h-full object-contain project-image">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Product Packaging 3D</h3>
+                    <p class="text-gray-600 text-sm">Realistic 3D packaging mockup for branding and marketing.</p>
+                </div>
+            </div>
+            <!-- Project 8 -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="overflow-hidden h-60">
+                    <img src="./3Ds max/Screenshot 2025-02-28 235938.png" alt="Social Media 3D Post" class="w-full h-full object-contain project-image">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Patterned 3d wall block</h3>
+                    <p class="text-gray-600 text-sm">Engaging 3D visuals created for digital platforms and campaigns.</p>
+                </div>
+            </div>
+            <!-- Project 9 -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="overflow-hidden h-60">
+                    <img src="./3Ds max/Screenshot 2025-03-01 000003.png" alt="Brand Campaign Render" class="w-full h-full object-contain project-image">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">3d Wall Block</h3>
+                    <p class="text-gray-600 text-sm">Series of 3D renders for a cohesive brand campaign.</p>
+                </div>
+            </div>
+            <!-- Project 10 -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="overflow-hidden h-60">
+                    <img src="./3Ds max/Screenshot 2025-04-17 210927.png" alt="Creative 3D Composition" class="w-full h-full object-contain project-image">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Creative 3D Composition</h3>
+                    <p class="text-gray-600 text-sm">Experimental 3D scene blending modeling and photo manipulation.</p>
                 </div>
             </div>
         </div>
@@ -162,11 +191,8 @@
 
     <!-- Navigation Footer -->
     <div class="max-w-7xl mx-auto px-4 pb-12 flex justify-between">
-        <a href="illustrator.html" class="flex items-center text-indigo-600 hover:text-indigo-800 pagination-link">
-            <i class="fas fa-arrow-left mr-2"></i> Previous: Illustrator Work
-        </a>
-        <a href="indesign.html" class="flex items-center text-indigo-600 hover:text-indigo-800 pagination-link">
-            Next: InDesign Work <i class="fas fa-arrow-right ml-2"></i>
+        <a href="after.html" class="flex items-center text-indigo-600 hover:text-indigo-800">
+            <i class="fas fa-arrow-left mr-2"></i> Back to After Effects
         </a>
     </div>
 
@@ -176,7 +202,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <h3 class="text-xl font-bold mb-4">Tanish Mann</h3>
-                    <p class="text-gray-400">Professional designer specializing in graphic design, VFX, and digital media solutions.</p>
+                    <p class="text-gray-400">Professional designer specializing in 3D modeling, graphic design, VFX, and digital media solutions.</p>
                 </div>
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Quick Links</h4>

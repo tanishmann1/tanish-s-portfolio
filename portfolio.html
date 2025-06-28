@@ -1,59 +1,368 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="tanish.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Tanish Mann | Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/tailwind.css">
+    <style>
+        .project-card {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .project-image {
+            transition: transform 0.5s ease;
+        }
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        .category-filter {
+            transition: all 0.2s ease;
+        }
+        .category-filter.active {
+            background-color: rgba(79,70,229,var(--tw-bg-opacity));
+            color: white;
+        }
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+    </style>
 </head>
-<body>
-    <div class="elsebg">
-        <nav>
-            <div class="navleft">
-                <h1>Tanish's Portfolio</h1>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+     <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">TM</span>
+                <span class="ml-2 text-xl font-semibold text-gray-800 hidden md:block">Tanish Mann</span>
             </div>
-            <div class="navright">
-                <input type="checkbox" id="check" />
-                <label for="check" class='checkbtn'>
-                    <i class="fa-solid fa-bars"></i>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-indigo-500 transition">Home</a>
+                <a href="portfolio.html" class="text-indigo-500 font-medium border-b-2 border-indigo-500 pb-1">Portfolio</a>
+                <a href="about.html" class="text-gray-700 hover:text-indigo-500 transition">About</a>
+                <a href="resume.html" class="text-gray-700 hover:text-indigo-500 transition">Resume</a>
+                <div class="flex space-x-4 ml-4">
+                    <a href="https://www.facebook.com/" class="text-gray-600 hover:text-indigo-600 text-xl"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/tanishmann1" class="text-gray-600 hover:text-pink-600 text-xl"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <input type="checkbox" id="check" class="hidden" />
+                <label for="check" class='checkbtn cursor-pointer text-gray-700 hover:text-indigo-500'>
+                    <i class="fa-solid fa-bars text-2xl"></i>
                 </label>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li><a href=""><i class="fa-brands fa-facebook"></i></a> <a href="https://www.instagram.com/tanishmann1"><i class="fa-brands fa-instagram"></i></a></li>
-                </ul>
             </div>
-        </nav>
-        <main>
-            <div class="heading">
-                <h1>Work!</h1>
-            </div>
-            <div class="grid-container"> 
-                <a href="photoshop.html"><div style="background-image: url(MOVIE\ POSTER.jpg); " class="card"><h2>Photoshop</h2></div></a>
-                <a href="illustrator.html"><div style="background-image: url(VECTOR\ ART.jpg);" class="card"><h2>Illustrator</h2></div></a>
-                <a href="corel.html"><div style="background-image: url(MENU\ CAFETERIA.jpg); " class="card"><h2>CorelDRAW</h2></div></a>
-                <a href="indesign.html"><div style="background-image: url(BROCHURE.jpg); " class="card"><h2>InDesign</h2></div></a>
-                <a href="premier.html"><div style="background-image: url(image.png); " class="card"><h2>Premerier Pro</h2></div></a> 
-                <a href="after.html"><div style="background-image: url(burgerimg.png); " class="card"><h2>After Effects</h2></div></a>
-            </div>
-        </main>
-        <footer class="footer">
-            <p>Copyright © 2024 Tanish's Portfolio website</p>
-            <p>
-              Contact us:
-              <a href="https://mann24161@gmail.com">mann24161@gmail.com</a> |
-              <a href="tel:+919311634255">+91 9311634255</a>
-            </p>
-            <p>
-              Follow us:
-              <a href="https://t.ly/ec8NF">WhatsApp</a> |
-              <a href="https://facebook.com/">Facebook</a> |
-              <a href="https://www.instagram.com/tanishmann1">Instagram</a>
-            </p>
-          </footer>
         </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu md:hidden bg-white" id="mobileMenu">
+            <div class="px-4 py-2 space-y-3">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-indigo-500">Home</a>
+                <a href="portfolio.html" class="block py-2 text-indigo-500 font-medium">Portfolio</a>
+                <a href="about.html" class="block py-2 text-gray-700 hover:text-indigo-500">About</a>
+                <a href="resume.html" class="block py-2 text-gray-700 hover:text-indigo-500">Resume</a>
+                <div class="flex space-x-4 py-2">
+                    <a href="https://www.facebook.com/" class="text-gray-600 hover:text-indigo-600 text-xl"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/tanishmann1" class="text-gray-600 hover:text-pink-600 text-xl"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Page Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">My Creative Portfolio</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Explore my collection of design projects across various platforms and tools</p>
+        </div>
+        
+        <!-- Category Filters -->
+        <div class="flex flex-wrap justify-center gap-3 mb-12">
+            <button class="category-filter active px-4 py-2 rounded-full bg-indigo-100 text-indigo-600 font-medium" data-category="all">All Work</button>
+            <button class="category-filter px-4 py-2 rounded-full bg-gray-100 text-gray-600 font-medium" data-category="photoshop">Photoshop</button>
+            <button class="category-filter px-4 py-2 rounded-full bg-gray-100 text-gray-600 font-medium" data-category="illustrator">Illustrator</button>
+            <button class="category-filter px-4 py-2 rounded-full bg-gray-100 text-gray-600 font-medium" data-category="corel">CorelDRAW</button>
+            <button class="category-filter px-4 py-2 rounded-full bg-gray-100 text-gray-600 font-medium" data-category="indesign">InDesign</button>
+            <button class="category-filter px-4 py-2 rounded-full bg-gray-100 text-gray-600 font-medium" data-category="premiere">Premiere Pro</button>
+            <button class="category-filter px-4 py-2 rounded-full bg-gray-100 text-gray-600 font-medium" data-category="aftereffects">After Effects</button>
+        </div>
+        
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <!-- Photoshop Project -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden" data-category="photoshop">
+                <div class="overflow-hidden h-60">
+                    <img src="./photoshopimages/ADVERTISEMENT.jpg" alt="Photoshop Work" class="w-full h-full object-cover project-image">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center mb-2">
+                        <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
+                            <i class="fas fa-paint-brush text-indigo-500"></i>
+                        </div>
+                        <span class="text-sm font-medium text-indigo-500">PHOTOSHOP</span>
+                    </div>
+                    <h2 class="text-xl font-semibold mb-2">Advanced Photo Manipulation</h2>
+                    <p class="text-gray-600 mb-4">A showcase of my best photo editing and compositing work in Photoshop.</p>
+                    <a href="photoshop.html" class="text-indigo-500 font-medium hover:text-indigo-700 inline-flex items-center">
+                        View Project <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Illustrator Project -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden" data-category="illustrator">
+                <div class="overflow-hidden h-60">
+                    <img src="./illustratorimages/VECTOR ART.jpg" alt="Illustrator Work" class="w-full h-full object-cover project-image">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center mb-2">
+                        <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-3">
+                            <i class="fas fa-pen-ruler text-purple-500"></i>
+                        </div>
+                        <span class="text-sm font-medium text-purple-500">ILLUSTRATOR</span>
+                    </div>
+                    <h2 class="text-xl font-semibold mb-2">Vector Art Collection</h2>
+                    <p class="text-gray-600 mb-4">Creative vector designs and illustrations made using Adobe Illustrator.</p>
+                    <a href="illustrator.html" class="text-indigo-500 font-medium hover:text-indigo-700 inline-flex items-center">
+                        View Project <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- CorelDRAW Project -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden" data-category="corel">
+                <div class="overflow-hidden h-60">
+                    <img src="./corelimages/TANISH BRO.jpg" alt="Corel Work" class="w-full h-full object-cover project-image">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center mb-2">
+                        <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                            <i class="fas fa-draw-polygon text-green-500"></i>
+                        </div>
+                        <span class="text-sm font-medium text-green-500">CORELDRAW</span>
+                    </div>
+                    <h2 class="text-xl font-semibold mb-2">Logo Design Series</h2>
+                    <p class="text-gray-600 mb-4">Professional logo designs created with CorelDRAW's powerful vector tools.</p>
+                    <a href="corel.html" class="text-indigo-500 font-medium hover:text-indigo-700 inline-flex items-center">
+                        View Project <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- InDesign Project -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden" data-category="indesign">
+                <div class="overflow-hidden h-60">
+                    <img src="./indesignimages/BROCHURE.jpg" alt="InDesign Work" class="w-full h-full object-cover project-image">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center mb-2">
+                        <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center mr-3">
+                            <i class="fas fa-book-open text-red-500"></i>
+                        </div>
+                        <span class="text-sm font-medium text-red-500">INDESIGN</span>
+                    </div>
+                    <h2 class="text-xl font-semibold mb-2">Magazine Layout Design</h2>
+                    <p class="text-gray-600 mb-4">Beautiful page layouts and editorial designs crafted in InDesign.</p>
+                    <a href="indesign.html" class="text-indigo-500 font-medium hover:text-indigo-700 inline-flex items-center">
+                        View Project <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Premiere Pro Project -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden" data-category="premiere">
+                <div class="overflow-hidden h-60">
+                    <img src="./premiervideo/image.png" alt="Premiere Work" class="w-full h-full object-cover project-image">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center mb-2">
+                        <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center mr-3">
+                            <i class="fas fa-film text-yellow-500"></i>
+                        </div>
+                        <span class="text-sm font-medium text-yellow-500">PREMIERE PRO</span>
+                    </div>
+                    <h2 class="text-xl font-semibold mb-2">Short Film Editing</h2>
+                    <p class="text-gray-600 mb-4">Professional video editing projects completed in Adobe Premiere Pro.</p>
+                    <a href="premier.html" class="text-indigo-500 font-medium hover:text-indigo-700 inline-flex items-center">
+                        View Project <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- After Effects Project -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden" data-category="aftereffects">
+                <div class="overflow-hidden h-60">
+                    <img src="./after/burgerimg.png" alt="After Effects Work" class="w-full h-full object-cover project-image">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center mb-2">
+                        <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
+                            <i class="fas fa-magic text-indigo-500"></i>
+                        </div>
+                        <span class="text-sm font-medium text-indigo-500">AFTER EFFECTS</span>
+                    </div>
+                    <h2 class="text-xl font-semibold mb-2">Motion Graphics Reel</h2>
+                    <p class="text-gray-600 mb-4">Visual effects and motion graphics created using Adobe After Effects.</p>
+                    <a href="after.html" class="text-indigo-500 font-medium hover:text-indigo-700 inline-flex items-center">
+                        View Project <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 3D Modelling -->
+             <div class="project-card bg-white rounded-lg shadow-md overflow-hidden" data-category="aftereffects">
+                <div class="overflow-hidden h-60">
+                    <img src="./3Ds max/interior designing 0001.png" alt="After Effects Work" class="w-full h-full object-cover project-image">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center mb-2">
+                        <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
+                            <i class="fa-solid fa-cube text-green-500"></i>
+                        </div>
+                        <span class="text-sm font-medium text-green-500">3D Modelling</span>
+                    </div>
+                    <h2 class="text-xl font-semibold mb-2">Interior Desining&Texturing</h2>
+                    <p class="text-gray-600 mb-4">3D Modelling & 3D Product design using 3Ds max</p>
+                    <a href="3d.html" class="text-indigo-500 font-medium hover:text-indigo-700 inline-flex items-center">
+                        View Project <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Additional Content Section -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">About My Creative Process</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-indigo-600">Design Philosophy</h3>
+                    <p class="text-gray-600 mb-4">I believe in creating designs that are not only visually appealing but also communicate effectively. Every project begins with understanding the core message and target audience.</p>
+                    <p class="text-gray-600">My approach combines technical skills with creative thinking to deliver solutions that stand out while serving their intended purpose perfectly.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-indigo-600">Tools & Techniques</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Advanced photo manipulation in Photoshop</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Precision vector work in Illustrator</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Professional layout design in InDesign</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Dynamic motion graphics in After Effects</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Call to Action -->
+        <div class="bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg shadow-lg p-8 text-center text-white">
+            <h2 class="text-2xl font-bold mb-4">Ready to Start Your Project?</h2>
+            <p class="text-xl mb-6 max-w-2xl mx-auto">Let's collaborate to bring your creative vision to life with professional design solutions.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="mailto:mann24161@gmail.com" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition">
+                    <i class="fas fa-envelope mr-2"></i> Email Me
+                </a>
+                <a href="tel:+919311634255" class="bg-transparent border-2 border-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-indigo-600 transition">
+                    <i class="fas fa-phone mr-2"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Tanish Mann</h3>
+                    <p class="text-gray-400">Professional designer specializing in graphic design, VFX, and digital media solutions.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="portfolio.html" class="text-gray-400 hover:text-white transition">Portfolio</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">About</a></li>
+                        <li><a href="resume.html" class="text-gray-400 hover:text-white transition">Resume</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-gray-400 mr-2"></i>
+                            <a href="mailto:mann24161@gmail.com" class="text-gray-400 hover:text-white transition">mann24161@gmail.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-gray-400 mr-2"></i>
+                            <a href="tel:+919311634255" class="text-gray-400 hover:text-white transition">+91 9311634255</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Me</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/" class="text-gray-400 hover:text-indigo-400 text-xl"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/tanishmann1" class="text-gray-400 hover:text-pink-400 text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="https://t.ly/ec8NF" class="text-gray-400 hover:text-green-400 text-xl"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>Copyright © 2024 Tanish Mann. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('check').addEventListener('change', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (this.checked) {
+                mobileMenu.classList.add('open');
+            } else {
+                mobileMenu.classList.remove('open');
+            }
+        });
+        
+        // Category filtering
+        const filterButtons = document.querySelectorAll('.category-filter');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active state
+                filterButtons.forEach(btn => btn.classList.remove('active', 'bg-indigo-100', 'text-indigo-600'));
+                filterButtons.forEach(btn => btn.classList.add('bg-gray-100', 'text-gray-600'));
+                button.classList.add('active', 'bg-indigo-100', 'text-indigo-600');
+                button.classList.remove('bg-gray-100', 'text-gray-600');
+                
+                // Filter projects
+                const category = button.dataset.category;
+                projectCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
+
 </html>

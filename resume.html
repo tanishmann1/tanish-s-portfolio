@@ -3,48 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="tanish.css">
+    <title>Tanish Mann | Professional Resume</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <style>
+        .resume-container {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .resume-container:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+        .section-divider {
+            position: relative;
+            height: 1px;
+             background-color: rgba(79,70,229,var(--tw-bg-opacity));
+            margin: 2rem 0;
+        }
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: -5px;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            background: #3b82f6;
+            border-radius: 50%;
+        }
+    </style>
 </head>
-<body>
-    <div class="elsebg">
-        <nav>
-            <div class="navleft">
-                <h1>Tanish's Portfolio</h1>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">TM</span>
+                <span class="ml-2 text-xl font-semibold text-gray-800 hidden md:block">Tanish Mann</span>
             </div>
-            <div class="navright">
-                <input type="checkbox" id="check" />
-                <label for="check" class='checkbtn'>
-                    <i class="fa-solid fa-bars"></i>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-indigo-500 transition">Home</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-indigo-500 transition">Portfolio</a>
+                <a href="about.html" class="text-gray-700 hover:text-indigo-500 transition">About</a>
+                <a href="resume.html" class="text-indigo-500 font-medium border-b-2 border-indigo-500 pb-1">Resume</a>
+                <div class="flex space-x-4 ml-4">
+                    <a href="https://www.facebook.com/" class="text-gray-600 hover:text-indigo-600 text-xl"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/tanishmann1" class="text-gray-600 hover:text-pink-600 text-xl"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <input type="checkbox" id="check" class="hidden" />
+                <label for="check" class='checkbtn cursor-pointer text-gray-700 hover:text-indigo-500'>
+                    <i class="fa-solid fa-bars text-2xl"></i>
                 </label>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li><a href=""><i class="fa-brands fa-facebook"></i></a> <a href="https://www.instagram.com/tanishmann1"><i class="fa-brands fa-instagram"></i></a></li>
-                </ul>
             </div>
-        </nav>
-        <main style="text-align: center;">
-            <h1 style="margin-top: 10px; margin-bottom: 20px;">Resume</h1>
-            <img style="margin-bottom: 110px; width: 100vw; height: auto;" src="Tanishresume.jpg" alt="">
-        </main>
-        <footer class="footer">
-            <p>Copyright © 2024 Tanish's Portfolio website</p>
-            <p>
-              Contact us:
-              <a href="https://mann24161@gmail.com">mann24161@gmail.com</a> |
-              <a href="tel:+919311634255">+91 9311634255</a>
-            </p>
-            <p>
-              Follow us:
-              <a href="https://t.ly/ec8NF">WhatsApp</a> |
-              <a href="https://facebook.com/">Facebook</a> |
-              <a href="https://www.instagram.com/tanishmann1">Instagram</a>
-            </p>
-          </footer>
         </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu md:hidden bg-white" id="mobileMenu">
+            <div class="px-4 py-2 space-y-3">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-indigo-500">Home</a>
+                <a href="portfolio.html" class="block py-2 text-gray-700 hover:text-indigo-500">Portfolio</a>
+                <a href="about.html" class="block py-2 text-gray-700 hover:text-indigo-500">About</a>
+                <a href="resume.html" class="block py-2 text-indigo-500 font-medium">Resume</a>
+                <div class="flex space-x-4 py-2">
+                    <a href="https://www.facebook.com/" class="text-gray-600 hover:text-indigo-600 text-xl"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/tanishmann1" class="text-gray-600 hover:text-pink-600 text-xl"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Page Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">My <span class="text-indigo-600">Professional Resume</span></h1>
+            <p class="text-xl text-gray-600">A comprehensive overview of my skills, experience, and qualifications</p>
+        </div>
+        
+        <!-- Resume Content -->
+        <div class="bg-white rounded-xl resume-container p-6 md:p-8 mb-12">
+            <div class="flex flex-col md:flex-row gap-8">
+                <!-- Resume Image -->
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="Tanishresume.jpg" alt="Tanish's Resume" class="w-full max-w-2xl rounded-lg shadow-md">
+                </div>
+                
+                <!-- Key Highlights -->
+                <div class="md:w-1/2">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Key Highlights</h2>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-indigo-600 mb-3">Skills Summary</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <div class="bg-indigo-100 text-indigo-600 px-4 py-2 rounded-full font-medium">
+                                <i class="fas fa-paint-brush mr-2"></i> Photoshop
+                            </div>
+                            <div class="bg-indigo-100 text-indigo-600 px-4 py-2 rounded-full font-medium">
+                                <i class="fas fa-pen-ruler mr-2"></i> Illustrator
+                            </div>
+                            <div class="bg-indigo-100 text-indigo-600 px-4 py-2 rounded-full font-medium">
+                                <i class="fas fa-film mr-2"></i> Premiere Pro
+                            </div>
+                            <div class="bg-indigo-100 text-indigo-600 px-4 py-2 rounded-full font-medium">
+                                <i class="fas fa-magic mr-2"></i> After Effects
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-divider"></div>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-indigo-600 mb-3">Experience Highlights</h3>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                                <span>Created engaging social media content for influencers and brands</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                                <span>Produced high-performance gym and fitness content</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                                <span>Designed thumbnails that increased viewer engagement</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section-divider"></div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-indigo-600 mb-3">Get in Touch</h3>
+                        <div class="space-y-2 text-gray-600">
+                            <p class="flex items-center">
+                                <i class="fas fa-envelope text-indigo-500 mr-2"></i>
+                                <a href="mailto:mann24161@gmail.com" class="hover:text-indigo-600">mann24161@gmail.com</a>
+                            </p>
+                            <p class="flex items-center">
+                                <i class="fas fa-phone text-indigo-500 mr-2"></i>
+                                <a href="tel:+919311634255" class="hover:text-indigo-600">+91 9311634255</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Download Section -->
+        <div class="text-center mb-16">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Want a Copy of My Resume?</h2>
+            <a href="Tanishresume.jpg" download class="inline-block px-8 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition shadow-lg">
+                <i class="fas fa-download mr-2"></i> Download Resume
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Tanish Mann</h3>
+                    <p class="text-gray-400">Professional designer specializing in graphic design, VFX, and digital media solutions.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="portfolio.html" class="text-gray-400 hover:text-white transition">Portfolio</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">About</a></li>
+                        <li><a href="resume.html" class="text-gray-400 hover:text-white transition">Resume</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-gray-400 mr-2"></i>
+                            <a href="mailto:mann24161@gmail.com" class="text-gray-400 hover:text-white transition">mann24161@gmail.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-gray-400 mr-2"></i>
+                            <a href="tel:+919311634255" class="text-gray-400 hover:text-white transition">+91 9311634255</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Me</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/" class="text-gray-400 hover:text-indigo-400 text-xl"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/tanishmann1" class="text-gray-400 hover:text-pink-400 text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="https://t.ly/ec8NF" class="text-gray-400 hover:text-green-400 text-xl"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>Copyright © 2024 Tanish Mann. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('check').addEventListener('change', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (this.checked) {
+                mobileMenu.classList.add('open');
+            } else {
+                mobileMenu.classList.remove('open');
+            }
+        });
+    </script>
 </body>
 </html>

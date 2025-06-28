@@ -4,58 +4,421 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="tanish.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Tanish Mann | Creative Designer & VFX Artist</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/tailwind.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .section-divider {
+            height: 100px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #f8fafc 100%);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .project-card {
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.03);
+        }
+
+        .floating {
+            animation-name: floating;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translate(0, 0px);
+            }
+
+            50% {
+                transform: translate(0, 15px);
+            }
+
+            100% {
+                transform: translate(0, -0px);
+            }
+        }
+    </style>
 </head>
 
-<body>
-    <div class="homebg">
-    <nav>
-        <div class="navleft">
-            <h1>Tanish's Portfolio</h1>
+<body class="bg-gray-50 font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <span
+                    class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">TM</span>
+                <span class="ml-2 text-xl font-semibold text-gray-800 hidden md:block">Tanish Mann</span>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="text-indigo-500 font-medium border-b-2 border-indigo-500 pb-1">Home</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-indigo-500 transition">Portfolio</a>
+                <a href="about.html" class="text-gray-700 hover:text-indigo-500 transition">About</a>
+                <a href="resume.html" class="text-gray-700 hover:text-indigo-500 transition">Resume</a>
+                <div class="flex space-x-4 ml-4">
+                    <a href="https://www.facebook.com/" class="text-gray-600 hover:text-indigo-600 text-xl"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/tanishmann1" class="text-gray-600 hover:text-pink-600 text-xl"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <input type="checkbox" id="check" class="hidden" />
+                <label for="check" class='checkbtn cursor-pointer text-gray-700 hover:text-indigo-500'>
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </label>
+            </div>
         </div>
-        <div class="navright">
-            <input type="checkbox" id="check" />
-            <label for="check" class='checkbtn'>
-                <i class="fa-solid fa-bars"></i>
-            </label>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href=""><i class="fa-brands fa-facebook"></i></a> <a href="https://www.instagram.com/tanishmann1"><i class="fa-brands fa-instagram"></i></a></li>
-            </ul>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu md:hidden bg-white" id="mobileMenu">
+            <div class="px-4 py-2 space-y-3">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-indigo-500">Home</a>
+                <a href="portfolio.html" class="block py-2 text-indigo-500 font-medium">Portfolio</a>
+                <a href="about.html" class="block py-2 text-gray-700 hover:text-indigo-500">About</a>
+                <a href="resume.html" class="block py-2 text-gray-700 hover:text-indigo-500">Resume</a>
+                <div class="flex space-x-4 py-2">
+                    <a href="https://www.facebook.com/" class="text-gray-600 hover:text-indigo-600 text-xl"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/tanishmann1" class="text-gray-600 hover:text-pink-600 text-xl"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+            </div>
         </div>
     </nav>
-    <main>
-        <div class="left">
-            <h1>Hey Myself Tanish Mann <br>I am a Professional <span id="element"></span></h1>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
+                    Hello, I'm <span class="text-indigo-600">Tanish Mann</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-8">
+                    I create <span id="element" class="font-semibold text-indigo-600"></span>
+                </p>
+                <div
+                    class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="portfolio.html"
+                        class="px-8 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition duration-300 shadow-lg">
+                        View My Work
+                    </a>
+                    <a href="resume.html"
+                        class="px-8 py-3 border-2 border-indigo-600 text-indigo-600 rounded-lg font-medium hover:bg-indigo-50 transition duration-300">
+                        My Resume
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JhcGhpYyUyMGRlc2lnbnxlbnwwfHwwfHx8MA%3D%3D"
+                    alt="Designer at work" class="rounded-lg shadow-2xl w-full max-w-md floating">
+            </div>
         </div>
-    </main>
-    <footer class="footer">
-        <p>Copyright © 2024 Tanish's Portfolio website</p>
-        <p>
-          Contact us:
-          <a href="https://mann24161@gmail.com">mann24161@gmail.com</a> |
-          <a href="tel:+919311634255">+91 9311634255</a>
-        </p>
-        <p>
-          Follow us:
-          <a href="https://t.ly/ec8NF">WhatsApp</a> |
-          <a href="https://facebook.com/">Facebook</a> |
-          <a href="https://www.instagram.com/tanishmann1">Instagram</a>
-        </p>
-      </footer>
-    </div>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">About Me</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
+                    <div class="relative">
+                        <div
+                            class="w-64 h-64 bg-indigo-100 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                            <img src="IMG_20250615_215103_338.webp" alt="Tanish Mann"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Creative Designer & VFX Artist</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Welcome to my creative world! I'm a passionate designer specializing in graphic design, visual
+                        effects, and digital media. With a keen eye for detail and a love for storytelling through
+                        visuals, I create stunning designs that communicate effectively and leave lasting impressions.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        My journey in design began several years ago, and since then I've had the privilege of working
+                        with diverse clients and projects that have honed my skills and expanded my creative horizons.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-paint-brush mr-2"></i> Graphic Design
+                        </div>
+                        <div class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-film mr-2"></i> VFX & Motion
+                        </div>
+                        <div class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-pen-fancy mr-2"></i> Illustration
+                        </div>
+                        <div class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-photo-film mr-2"></i> Photo Editing
+                        </div>
+                        <div class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-photo-film mr-2"></i> Video Editing
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">My Skills</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <a href="photoshop.html" class="skill-card bg-white p-6 rounded-xl shadow-md transition duration-300">
+                    <div class="text-indigo-600 w-16 h-16">
+                        <img src="https://img.icons8.com/fluent-systems-filled/512/7950F2/adobe-photoshop.png" alt="">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Photoshop</h3>
+                    <p class="text-gray-600">Advanced photo manipulation and digital painting.</p>
+                </a>
+                <a href="illustrator.html" class="skill-card bg-white p-6 rounded-xl shadow-md transition duration-300">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-pen-ruler"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Illustrator</h3>
+                    <p class="text-gray-600">Vector graphics and logo design expertise.</p>
+                </a>
+                <a href="premier.html" class="skill-card bg-white p-6 rounded-xl shadow-md transition duration-300">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Premiere Pro</h3>
+                    <p class="text-gray-600">Professional video editing and post-production.</p>
+                </a>
+                <a href="after.html" class="skill-card bg-white p-6 rounded-xl shadow-md transition duration-300">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">After Effects</h3>
+                    <p class="text-gray-600">Motion graphics and visual effects creation.</p>
+                </a>
+                <a href="indesign.html" class="skill-card bg-white p-6 rounded-xl shadow-md transition duration-300">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">InDesign</h3>
+                    <p class="text-gray-600">Layout design for print and digital publications.</p>
+                </a>
+                <a href="corel.html" class="skill-card bg-white p-6 rounded-xl shadow-md transition duration-300">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-draw-polygon"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">CorelDRAW</h3>
+                    <p class="text-gray-600">Vector illustration and page layout design.</p>
+                </a>
+                <a href="3d.html" class="skill-card bg-white p-6 rounded-xl shadow-md transition duration-300">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">3D Modeling</h3>
+                    <p class="text-gray-600">Basic 3D design and rendering skills.</p>
+                </a>
+                <a href="#" class="skill-card bg-white p-6 rounded-xl shadow-md transition duration-300">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Web Design</h3>
+                    <p class="text-gray-600">Basic UI/UX and web design principles.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Featured Projects</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">Here are some of my best works that showcase my skills
+                    and creativity.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Graphic Design Project"
+                            class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Brand Identity Design</h3>
+                        <p class="text-gray-600 mb-4">Complete branding package including logo, business cards, and
+                            stationery.</p>
+                        <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800">View Project →</a>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551269901-5c5e14c25df7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
+                            alt="VFX Project"
+                            class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Short Film VFX</h3>
+                        <p class="text-gray-600 mb-4">Visual effects and compositing for an independent short film.</p>
+                        <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800">View Project →</a>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
+                            alt="Illustration Project"
+                            class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Digital Illustration Series</h3>
+                        <p class="text-gray-600 mb-4">Collection of digital illustrations exploring surreal themes.</p>
+                        <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800">View Project →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="portfolio.html"
+                    class="inline-block px-8 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition duration-300 shadow-lg">
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-indigo-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Bring Your Vision to Life?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Let's collaborate on your next project. Whether you need stunning
+                designs, captivating visuals, or professional VFX, I'm here to help.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="mailto:mann24161@gmail.com"
+                    class="px-8 py-3 bg-white text-indigo-600 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">
+                    Email Me
+                </a>
+                <a href="https://t.ly/ec8NF"
+                    class="px-8 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-indigo-700 transition duration-300">
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Tanish Mann</h3>
+                    <p class="text-gray-400">Creating visually stunning designs that communicate effectively and leave
+                        lasting impressions.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="portfolio.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Portfolio</a></li>
+                        <li><a href="about.html"
+                                class="text-gray-400 hover:text-white transition duration-300">About</a></li>
+                        <li><a href="resume.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Resume</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-gray-400"></i>
+                            <a href="mailto:mann24161@gmail.com"
+                                class="text-gray-400 hover:text-white transition duration-300">mann24161@gmail.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2 text-gray-400"></i>
+                            <a href="tel:+919311634255"
+                                class="text-gray-400 hover:text-white transition duration-300">+91 9311634255</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Me</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/tanishmann1"
+                            class="text-gray-400 hover:text-pink-500 transition duration-300 text-xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com/"
+                            class="text-gray-400 hover:text-blue-500 transition duration-300 text-xl">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300 text-xl">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-red-500 transition duration-300 text-xl">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>Copyright © 2024 Tanish Mann. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script>
-        var typed = new Typed('#element', {
-          strings: ['Graphic Designer', ' Vfx Artist.'],
-          typeSpeed: 100,
+        // Mobile menu toggle
+        document.getElementById('check').addEventListener('change', function () {
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (this.checked) {
+                mobileMenu.classList.add('open');
+            } else {
+                mobileMenu.classList.remove('open');
+            }
         });
-      </script>
+
+        var typed = new Typed('#element', {
+            strings: ['Graphic Designer', 'VFX Artist', 'Creative Professional'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true
+        });
+
+    </script>
 </body>
 
 </html>

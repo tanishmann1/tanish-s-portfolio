@@ -1,54 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="tanish.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>After Effects Work | Tanish Mann's Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .video-card {
+            transition: all 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .horizontal-video video {
+            aspect-ratio: 16/9;
+        }
+
+        .vertical-video video {
+            aspect-ratio: 9/16;
+        }
+    </style>
 </head>
-<body>
-    <nav>
-        <div class="navleft">
-            <h1>Tanish's Portfolio</h1>
+
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <span
+                    class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">TM</span>
+                <span class="ml-2 text-xl font-semibold text-gray-800 hidden md:block">Tanish Mann</span>
+            </div>
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-blue-500 transition">Home</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-blue-500 transition">Portfolio</a>
+                <a href="about.html" class="text-gray-700 hover:text-blue-500 transition">About</a>
+                <a href="resume.html" class="text-gray-700 hover:text-blue-500 transition">Resume</a>
+                <div class="flex space-x-4 ml-4">
+                    <a href="https://www.facebook.com/" class="text-gray-600 hover:text-blue-600 text-xl"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/tanishmann1" class="text-gray-600 hover:text-pink-600 text-xl"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-700 hover:text-blue-500 focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
         </div>
-        <div class="navright">
-            <input type="checkbox" id="check" />
-            <label for="check" class='checkbtn'>
-                <i class="fa-solid fa-bars"></i>
-            </label>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href=""><i class="fa-brands fa-facebook"></i></a> <a href="https://www.instagram.com/tanishmann1"><i class="fa-brands fa-instagram"></i></a></li>
-            </ul>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu md:hidden bg-white hidden" id="mobileMenu">
+            <div class="px-4 py-2 space-y-3">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-blue-500">Home</a>
+                <a href="portfolio.html" class="block py-2 text-gray-700 hover:text-blue-500">Portfolio</a>
+                <a href="about.html" class="block py-2 text-gray-700 hover:text-blue-500">About</a>
+                <a href="resume.html" class="block py-2 text-gray-700 hover:text-blue-500">Resume</a>
+                <div class="flex space-x-4 py-2">
+                    <a href="https://www.facebook.com/" class="text-gray-600 hover:text-blue-600 text-xl"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/tanishmann1" class="text-gray-600 hover:text-pink-600 text-xl"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+            </div>
         </div>
     </nav>
-    <h1 class="collage-head">After Effects Work!</h1>
 
-    <div class="collageparent">
-        <div class="collage-container"> 
-            <div class="collage-item"><video controls src="ads_burger.mp4"  ></video></div> 
-            <div class="collage-item"><video controls src="Product_1.mp4"  ></video></div> 
-            <div class="collage-item"><video controls src="Zomato - Food.mp4"  ></video></div> 
+    <!-- Page Header -->
+    <div class="max-w-7xl mx-auto px-4 py-12 text-center">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">Adobe <span class="text-blue-600">After Effects</span>
+            Projects</h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Showcasing my motion graphics, VFX, and compositing work</p>
+    </div>
+
+    <!-- Video Grid -->
+    <div class="max-w-7xl mx-auto px-4 pb-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Horizontal Video Card Example -->
+            <div class="video-card horizontal-video bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                <div class="relative">
+                    <video controls class="w-full h-auto bg-black">
+                        <source src="./after/ads_burger.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Burger Ad Animation</h3>
+                    <p class="text-gray-600 text-sm">Animated burger ad with dynamic text and effects</p>
+                </div>
+            </div>
+            <!-- More Horizontal Video Cards -->
+            <div class="video-card horizontal-video bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                <div class="relative">
+                    <video controls class="w-full h-auto bg-black">
+                        <source src="./after/Product_1.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Product Animation</h3>
+                    <p class="text-gray-600 text-sm">Product showcase with 3D and particle effects</p>
+                </div>
+            </div>
+            <div class="video-card horizontal-video bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                <div class="relative">
+                    <video controls class="w-full h-auto bg-black">
+                        <source src="./after/Zomato - Food.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Food Delivery Promo</h3>
+                    <p class="text-gray-600 text-sm">Promo video with animated overlays and transitions</p>
+                </div>
+            </div>
+            
         </div>
     </div>
-    <a href="premier.html"><div class="previous"><i class="fa-solid fa-backward"></i> Previous</div></a>
-    <footer class="footer">
-        <p>Copyright © 2024 Tanish's Portfolio website</p>
-        <p>
-          Contact us:
-          <a href="https://mann24161@gmail.com">mann24161@gmail.com</a> |
-          <a href="tel:+919311634255">+91 9311634255</a>
-        </p>
-        <p>
-          Follow us:
-          <a href="https://t.ly/ec8NF">WhatsApp</a> |
-          <a href="https://facebook.com/">Facebook</a> |
-          <a href="https://www.instagram.com/tanishmann1">Instagram</a>
-        </p>
-      </footer>
+
+    <!-- Navigation Footer -->
+    <div class="max-w-7xl mx-auto px-4 pb-12 flex justify-between">
+        <a href="premier.html" class="flex items-center text-blue-600 hover:text-blue-800 pagination-link">
+            <i class="fas fa-arrow-left mr-2"></i> Previous: Premiere Pro Work
+        </a>
+        <a href="3d.html" class="flex items-center text-blue-600 hover:text-blue-800 pagination-link">
+            Next: 3D Modelling <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Tanish Mann</h3>
+                    <p class="text-gray-400">Professional designer specializing in video editing, VFX, and digital media
+                        solutions.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="portfolio.html" class="text-gray-400 hover:text-white transition">Portfolio</a>
+                        </li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">About</a></li>
+                        <li><a href="resume.html" class="text-gray-400 hover:text-white transition">Resume</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-gray-400 mr-2"></i>
+                            <a href="mailto:mann24161@gmail.com"
+                                class="text-gray-400 hover:text-white transition">mann24161@gmail.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-gray-400 mr-2"></i>
+                            <a href="tel:+919311634255" class="text-gray-400 hover:text-white transition">+91
+                                9311634255</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Me</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/" class="text-gray-400 hover:text-blue-400 text-xl"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/tanishmann1"
+                            class="text-gray-400 hover:text-pink-400 text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="https://t.ly/ec8NF" class="text-gray-400 hover:text-green-400 text-xl"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>Copyright © 2024 Tanish Mann. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobileMenu');
+        });
+    </script>
 </body>
+
 </html>
