@@ -21,12 +21,8 @@ tanish-portfolio-tailwind
 │   ├── after.html       # Page showcasing After Effects work
 │   └── script.js         # JavaScript for toggle functionality
 ├── src
-│   └── styles
-│       └── tailwind.css  # Main stylesheet for Tailwind CSS
-├── tailwind.config.js     # Configuration file for Tailwind CSS
-├── postcss.config.js      # Configuration file for PostCSS
-├── package.json           # npm configuration file
-└── README.md              # Project documentation
+    └── styles
+        └── tailwind.css  # Main stylesheet for Tailwind CSS
 ```
 
 ## Installation
@@ -39,17 +35,7 @@ To get started with this project, follow these steps:
    cd tanish-portfolio-tailwind
    ```
 
-2. Install the dependencies:
-   ```
-   npm install
-   ```
-
-3. Build the Tailwind CSS:
-   ```
-   npm run build
-   ```
-
-4. Open the `public/index.html` file in your browser to view the portfolio.
+2. Open the `public/index.html` file in your browser to view the portfolio.
 
 ## Usage
 
